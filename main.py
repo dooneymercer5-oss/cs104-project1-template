@@ -1,12 +1,14 @@
-# [Your Project Name Here]
-# Author: [Your Name]
+# Music Personality Quiz
+# Author: Adrion Mercer
 # A quiz/questionnaire program built for CS 104 Project 1
 
-# TODO: Define your variables here.
+# Variables to keep track of music genre scores
+hip_hop = 0
+rnb = 0
+pop = 0
 
-# TODO: Print a welcome message introducing your program.
-
-# TODO: Write your questions and conditional logic here.
-# Follow the outline you planned in your README.
-
-# TODO: Display the final results to the user.
+print("====================================")
+print("       MUSIC FAN PERSONALITY QUIZ")
+print("====================================")
+print("Answer the questions to find out what type of music fan you are!")
+print()
