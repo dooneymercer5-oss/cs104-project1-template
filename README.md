@@ -1,67 +1,110 @@
-# [Your Project Name Here]
-> A short one-line tagline for your quiz or questionnaire
+# [Music Fan Personality Quiz]
+> Discover what your music taste says bout you!!
 
 ## Overview
-> **DELETE AND REPLACE ME:** Describe your program's focus, the type of
-> program it is (quiz, personality test, or recommendation tool), and the
-> final output a user will receive. Make it clear how user input and
-> conditional logic work together to produce that result.
->
-> Example: "This program quizzes users on Impressionist art. Based on
-> their answers, users earn points, and their final score determines
-> their level of knowledge on the topic."
+This program is a Music Personality Quiz that asks the user five questions about their music preferences. Each answer gives points to a specific music genre: Hip-Hop, R&B, or Pop. At the end of the quiz, the program compares the genre scores and gives the user a music personality result.
+
+The possible results are:
+Hip-Hop Fan
+R&B Fan
+Pop Fan
+Mixed Music Fan
 
 ## Sample Questions and Responses
-> **DELETE AND REPLACE ME:** List at least five questions you'll ask the
-> user, along with the possible responses for each. Keep every question
-> closed-ended (numbered options or yes/no) so each response can be
-> handled directly by an `if`, `elif`, or `else` statement.
->
-> Example:
-> Which of the following painters is an Impressionist?
-> 1. Monet
-> 2. Warhol
-> 3. Rembrandt
+Question 1
+What type of music do you listen to the most?
+A.Hip-Hop/Rap
+B.R&B
+C.Pop
+D.A little bit of everything
+
+Question 2
+What do you care about most in a song?
+A.A good beat
+B.The emotions and vocals
+C.A catchy chorus
+D.All of these
+
+Question 3
+Where would you rather hear your favorite music?
+A.At a party
+B.In the car
+C.At a concert
+D.Anywhere
+
+Question 4
+What makes an artist stand out to you?
+A.Their lyrics
+B.Their voice
+C.Their popularity
+D.Their overall style
+
+Question 5
+How often do you listen to music?
+A.All day
+B.A few hours a day
+C.Sometimes
+D.Whenever I feel like it
 
 ## Variables
-> **DELETE AND REPLACE ME:** List the variables your program uses. For
-> each one, note what it stores and why you structured it that way,
-> especially for variables tracking results, explain whether a single
-> variable or multiple variables makes sense for your program's logic.
->
-> Example:
-> - `score` (int): tracks total quiz points. A single variable works here
->   since results are cumulative and only one final score matters.
-> - `decade_1920s_points`, `decade_1960s_points`, `decade_1980s_points`
->   (int): separate variables needed since multiple decades can tie for
->   highest score, one combined variable couldn't represent that.
-> - `user_choice` (str or int): stores the user's response to a question,
->   compared against expected options to decide which branch of the
->   conditional runs.
+hip_hop (int): keeps track of the number of Hip-Hop points the user earns. A separate variable is needed because the program compares Hip-Hop's score with the other genres at the end.
+
+rnb (int): keeps track of the number of R&B points the user earns. It is separate so the program can compare the R&B score with the other genre scores.
+
+pop (int): keeps track of the number of Pop points the user earns. It is separate so the program can compare the Pop score with Hip-Hop and R&B.
+
+answer1 (str): stores the user's response to Question 1 so the program can determine which genre should receive points.
+
+answer2 (str): stores the user's response to Question 2.
+
+answer3 (str): stores the user's response to Question 3.
+
+answer4 (str): stores the user's response to Question 4.
+
+answer5 (str): stores the user's response to Question 5.
+
+Separate variables are used for the three genre scores because the program needs to compare them individually. A single score would not show which genre the user's answers matched.
 
 ## Conditional Logic Outline
-> **DELETE AND REPLACE ME:** Outline every conditional statement in your
-> program, in the order they appear. For each one, describe it in plain
-> language (no code needed): which question/condition it relates to,
-> each branch (`if`/`elif`/`else`), the exact condition that triggers
-> each branch, the action(s) that happen in each branch, and note any
-> nested conditionals and why they're nested.
->
-> Example:
-> - **Conditional statement 1** — related to "Which of the following
->   painters is an Impressionist? 1-Monet 2-Warhol 3-Rembrandt"
->   - `if` response is 1 (Monet): display congratulatory message,
->     increment `score` by 1
->   - `else`: display incorrect message and explain the correct answer
->
-> - **Conditional statement 2** — reveals final results based on `score`
->   - `if` score is 3: display high-knowledge message
->   - `elif` score is 1 or 2: display some-knowledge message
->   - `else`: display message encouraging the user to learn more
+Conditional statement 1 — Question 1
+If the user chooses 1, which represents Hip-Hop/Rap, add 1 point to hip_hop.
+Else if the user chooses 2, which represents R&B, add 1 point to rnb.
+Else if the user chooses 3, which represents Pop, add 1 point to pop.
+Else, add 1 point to all three genres because the user chose a response representing a variety of music.
+
+Conditional statement 2 — Question 2
+If the user chooses 1, which represents caring about a good beat, add 1 point to hip_hop.
+Else if the user chooses 2, which represents emotions and vocals, add 1 point to rnb.
+Else if the user chooses 3, which represents a catchy chorus, add 1 point to pop.
+Else, add 1 point to all three genres.
+
+Conditional statement 3 — Question 3
+If the user chooses 1, which represents listening at a party, add 1 point to hip_hop.
+Else if the user chooses 2, which represents listening in the car, add 1 point to rnb.
+Else if the user chooses 3, which represents listening at a concert, add 1 point to pop.
+Else, add 1 point to all three genres.
+
+Conditional statement 4 — Question 4
+If the user chooses 1, which represents an artist's lyrics, add 1 point to hip_hop.
+Else if the user chooses 2, which represents an artist's voice, add 1 point to rnb.
+Else if the user chooses 3, which represents an artist's popularity, add 1 point to pop.
+Else, add 1 point to all three genres.
+
+Conditional statement 5 — Question 5
+If the user chooses 1, which represents listening to music all day, add 1 point to hip_hop.
+Else if the user chooses 2, which represents listening for a few hours a day, add 1 point to rnb.
+Else if the user chooses 3, which represents listening sometimes, add 1 point to pop.
+Else, add 1 point to all three genres.
+
+Conditional statement 6 — Final Results
+If the Hip-Hop score is greater than both the R&B and Pop scores, display "Hip-Hop Fan."
+Else if the R&B score is greater than both the Hip-Hop and Pop scores, display "R&B Fan."
+Else if the Pop score is greater than both the Hip-Hop and R&B scores, display "Pop Fan."
+Else, display "Mixed Music Fan."
+This final conditional is not nested because it runs after all five questions have been answered and uses the three accumulated genre scores to determine the final result.
 
 ## How to Run
 1. Clone this repo
 2. Run `python3 main.py` or `python main.py`
 
 ## Demo Video
-[DELETE AND REPLACE ME: link to your 5-minute explanation video]
